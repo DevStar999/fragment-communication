@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.fragmentcommunication.R;
-import com.example.fragmentcommunication.SecondActivity;
+import com.example.fragmentcommunication.fragmenttoactivity.SecondActivity;
 
 /**
  * The classes MainActivity, FragmentA & FragmentB are associated with each other for the purpose of

@@ -4,28 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".fragmenttoactivity.SecondActivity">
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_text"
+        android:id="@+id/info_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        app:layout_constraintBottom_toTopOf="@id/send_info_button"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/send_info_button_second_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="1" />
 
+    <!-- Remember that some UI elements like buttons etc. will peek from the
+    activity into the fragment, so it looks like stuff from the parent activity
+    has entered and is accessible in the fragment, which is not what we want.
+    To avoid this, we add the attribute -> android:stateListAnimator="@null"-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/send_info_button"
+        android:id="@+id/send_info_button_second_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEND INFO"
+        android:stateListAnimator="@null"
         app:layout_constraintBottom_toTopOf="@+id/goto_button_second_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/info_edit_text"
         app:layout_constraintVertical_weight="1"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -34,10 +40,11 @@
         android:layout_height="wrap_content"
         android:onClick="gotoMainActivity"
         android:text="Goto Main Activity"
+        android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/send_info_button"
+        app:layout_constraintTop_toBottomOf="@id/send_info_button_second_activity"
         app:layout_constraintVertical_weight="1" />
 
     <FrameLayout

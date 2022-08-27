@@ -1,10 +1,13 @@
-package com.example.fragmentcommunication;
+package com.example.fragmentcommunication.fragmenttofragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.fragmentcommunication.R;
+import com.example.fragmentcommunication.SecondActivity;
 
 /**
  * The classes MainActivity, FragmentA & FragmentB are associated with each other for the purpose of

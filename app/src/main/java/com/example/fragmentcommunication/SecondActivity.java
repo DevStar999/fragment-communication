@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.fragmentcommunication.fragmenttofragment.MainActivity;
+
 public class SecondActivity extends AppCompatActivity {
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.fragmentcommunication;
+package com.example.fragmentcommunication.fragmenttofragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.fragment.app.Fragment;
+
+import com.example.fragmentcommunication.R;
 
 public class FragmentB extends Fragment {
     private FragmentBListener listener;

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.fragmentcommunication.R;
+import com.example.fragmentcommunication.datafromactivitytofragmentwithfactorymethod.ThirdActivity;
 import com.example.fragmentcommunication.fragmenttofragment.MainActivity;
 
 import java.util.Objects;
@@ -69,6 +70,12 @@ public class SecondActivity extends AppCompatActivity implements BlankFragment.O
 
     public void gotoMainActivity(View view) {
         Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void gotoThirdActivity(View view) {
+        Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
         startActivity(intent);
         finish();
     }

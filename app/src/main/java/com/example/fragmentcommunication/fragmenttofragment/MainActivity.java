@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.fragmentcommunication.R;
+import com.example.fragmentcommunication.datafromactivitytofragmentwithfactorymethod.ThirdActivity;
 import com.example.fragmentcommunication.fragmenttoactivity.SecondActivity;
 
 /**
@@ -50,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements FragmentA.Fragmen
 
     public void gotoSecondActivity(View view) {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void gotoThirdActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
         startActivity(intent);
         finish();
     }

@@ -28,24 +28,36 @@
         android:layout_height="wrap_content"
         android:text="SEND INFO"
         android:stateListAnimator="@null"
-        app:layout_constraintBottom_toTopOf="@+id/goto_button_second_activity"
+        app:layout_constraintBottom_toTopOf="@+id/activity_buttons_linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_edit_text"
         app:layout_constraintVertical_weight="1"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goto_button_second_activity"
+    <LinearLayout
+        android:id="@+id/activity_buttons_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="gotoMainActivity"
-        android:text="Goto Main Activity"
-        android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/send_info_button_second_activity"
-        app:layout_constraintVertical_weight="1" />
+        app:layout_constraintVertical_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_main_activity_button_second_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gotoMainActivity"
+            android:text="Goto Main Activity" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_third_activity_button_second_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gotoThirdActivity"
+            android:text="Goto 3rd Activity" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"

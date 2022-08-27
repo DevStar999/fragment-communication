@@ -20,23 +20,36 @@
         android:id="@+id/container_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/goto_button_main_activity"
+        app:layout_constraintBottom_toTopOf="@id/activity_buttons_linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_a"
         app:layout_constraintVertical_weight="1" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goto_button_main_activity"
+    <LinearLayout
+        android:id="@+id/activity_buttons_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Goto 2nd Activity"
-        android:onClick="gotoSecondActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_b"
-        app:layout_constraintVertical_weight="1" />
+        app:layout_constraintTop_toBottomOf="@+id/container_b">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_second_activity_button_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gotoSecondActivity"
+            android:text="Goto 2nd Activity" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_third_activity_button_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gotoThirdActivity"
+            android:text="Goto 3rd Activity" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

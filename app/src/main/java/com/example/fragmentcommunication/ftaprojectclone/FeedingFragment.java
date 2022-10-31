@@ -47,8 +47,9 @@ public class FeedingFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 stockLeft += 1;
-                stockLeftTextView.setText(String.valueOf(stockLeft));
-                sharedPreferences.edit().putInt("stockLeft", stockLeft).apply();
+                if (mListener != null) {
+                    mListener.onFeedingFragmentInteractionUpdateStock(stockLeft);
+                }
             }
         });
         decreaseStock.setOnClickListener(new View.OnClickListener() {
@@ -56,9 +57,9 @@ public class FeedingFragment extends Fragment {
             public void onClick(View view) {
                 if (stockLeft >= 1) {
                     stockLeft -= 1;
-                    stockLeftTextView.setText(String.valueOf(stockLeft));
-                    sharedPreferences.edit().putInt("stockLeft", stockLeft).apply();
-                    // TODO -> Call to method of FeedingFragment to update the value of stockLeft
+                    if (mListener != null) {
+                        mListener.onFeedingFragmentInteractionUpdateStock(stockLeft);
+                    }
                 } else {
                     if (mListener != null) {
                         mListener.onFeedingFragmentInteractionOutOfStock();
@@ -103,10 +104,19 @@ public class FeedingFragment extends Fragment {
         return view;
     }
 
+    public void updateStockFeedingFragment(int updatedStock) {
+        sharedPreferences.edit().putInt("stockLeft", updatedStock).apply();
+        if (mListener != null) {
+            stockLeft = updatedStock;
+            stockLeftTextView.setText(String.valueOf(stockLeft));
+        }
+    }
+
     public interface OnFeedingFragmentInteractionListener {
         void onFeedingFragmentInteractionBackClicked();
         void onFeedingFragmentInteractionOutOfStock();
         void onFeedingFragmentInteractionOpenShopFragment();
+        void onFeedingFragmentInteractionUpdateStock(int updatedStock);
     }
 
     @Override

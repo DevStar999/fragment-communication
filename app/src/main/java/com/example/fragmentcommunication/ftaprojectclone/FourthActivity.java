@@ -55,18 +55,6 @@ public class FourthActivity extends AppCompatActivity
             // Back button was pressed from fragment
             getSupportFragmentManager().popBackStack();
         }
-        Log.i("Custom Debugging", "Inside method @Override onBackPressed() " +
-                "after onBackPressed() processing is done");
-        List<Fragment> fragments = new ArrayList<>(getSupportFragmentManager().getFragments());
-        for (int index = 0; index < fragments.size(); index++) {
-            Fragment currentFragment = fragments.get(index);
-            if (currentFragment != null) {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is NOT null");
-                Log.i("Custom Debugging", "tag of current fragment = " + currentFragment.getTag());
-            } else {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is null");
-            }
-        }
     }
 
     /** onClick listeners for the views of this activity's layout **/
@@ -144,19 +132,7 @@ public class FourthActivity extends AppCompatActivity
                 R.anim.enter_from_right, R.anim.exit_to_right);
         transaction.addToBackStack(null);
         transaction.add(R.id.full_screen_fragment_container_fourth_activity,
-                fragment, "FEEDING_FRAGMENT");
-        Log.i("Custom Debugging", "Inside method openFeedingFragment(View view)");
-        List<Fragment> fragments = new ArrayList<>(getSupportFragmentManager().getFragments());
-        for (int index = 0; index < fragments.size(); index++) {
-            Fragment currentFragment = fragments.get(index);
-            if (currentFragment != null) {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is NOT null");
-                Log.i("Custom Debugging", "tag of current fragment = " + currentFragment.getTag());
-            } else {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is null");
-            }
-        }
-        transaction.commit();
+                fragment, "FEEDING_FRAGMENT").commit();
     }
 
     private void callShopFragment() {
@@ -167,19 +143,7 @@ public class FourthActivity extends AppCompatActivity
                 R.anim.enter_from_right, R.anim.exit_to_right);
         transaction.addToBackStack(null);
         transaction.add(R.id.full_screen_fragment_container_fourth_activity,
-                fragment, "SHOP_FRAGMENT");
-        Log.i("Custom Debugging", "Inside method callShopFragment()");
-        List<Fragment> fragments = new ArrayList<>(getSupportFragmentManager().getFragments());
-        for (int index = 0; index < fragments.size(); index++) {
-            Fragment currentFragment = fragments.get(index);
-            if (currentFragment != null) {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is NOT null");
-                Log.i("Custom Debugging", "tag of current fragment = " + currentFragment.getTag());
-            } else {
-                Log.i("Custom Debugging", "fragment at index = " + index + " is null");
-            }
-        }
-        transaction.commit();
+                fragment, "SHOP_FRAGMENT").commit();
     }
 
     public void openShopFragment(View view) {

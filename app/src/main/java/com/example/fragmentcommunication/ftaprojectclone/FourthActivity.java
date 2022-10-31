@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -125,6 +124,15 @@ public class FourthActivity extends AppCompatActivity
     }
 
     public void openFeedingFragment(View view) {
+        // If FeedingFragment was opened and is currently on top, then return
+        int countOfFragments = getSupportFragmentManager().getFragments().size();
+        if (countOfFragments > 0) {
+            Fragment topMostFragment = getSupportFragmentManager().getFragments().get(countOfFragments-1);
+            if (topMostFragment != null && topMostFragment.getTag().equals("FEEDING_FRAGMENT")) {
+                return;
+            }
+        }
+
         FeedingFragment fragment = new FeedingFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -136,6 +144,15 @@ public class FourthActivity extends AppCompatActivity
     }
 
     private void callShopFragment() {
+        // If ShopFragment was opened and is currently on top, then return
+        int countOfFragments = getSupportFragmentManager().getFragments().size();
+        if (countOfFragments > 0) {
+            Fragment topMostFragment = getSupportFragmentManager().getFragments().get(countOfFragments-1);
+            if (topMostFragment != null && topMostFragment.getTag().equals("SHOP_FRAGMENT")) {
+                return;
+            }
+        }
+
         ShopFragment fragment = new ShopFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

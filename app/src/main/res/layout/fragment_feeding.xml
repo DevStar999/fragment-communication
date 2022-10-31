@@ -43,15 +43,27 @@
             app:srcCompat="@drawable/back_arrow" />
     </FrameLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/open_shop_fragment_button_feeding_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openShopFragment"
+        android:text="Open Shop Fragment"
+        app:layout_constraintBottom_toTopOf="@id/stock_left_counter_constraint_layout_feeding_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feeding_fragment_title_frame_layout"
+        app:layout_constraintVertical_weight="1" />
+
     <LinearLayout
         android:id="@+id/stock_left_counter_constraint_layout_feeding_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/open_shop_fragment_button_feeding_fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/feeding_fragment_title_frame_layout">
+        app:layout_constraintTop_toBottomOf="@id/open_shop_fragment_button_feeding_fragment">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -108,17 +120,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/open_shop_fragment_button_feeding_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="openShopFragment"
-        android:text="Open Shop Fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stock_left_counter_constraint_layout_feeding_fragment"
-        app:layout_constraintVertical_weight="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

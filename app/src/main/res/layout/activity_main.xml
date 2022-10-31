@@ -31,6 +31,7 @@
         android:id="@+id/activity_buttons_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,23 +39,34 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/goto_second_activity_button_main_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:onClick="gotoSecondActivity"
-            android:text="Goto 2nd Activity" />
+            android:text="Goto 2nd Activity"
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/goto_third_activity_button_main_activity"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:onClick="gotoThirdActivity"
-            android:text="Goto 3rd Activity" />
+            android:text="Goto 3rd Activity"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_fourth_activity_button_main_activity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="gotoFourthActivity"
+            android:text="Goto 4th Activity"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container_large_comes_on_runtime"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -63,6 +75,7 @@
         android:id="@+id/fragment_container_small_stays_always"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

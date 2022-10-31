@@ -14,6 +14,7 @@ import com.example.fragmentcommunication.R;
 import com.example.fragmentcommunication.datafromactivitytofragmentwithfactorymethod.ThirdActivity;
 import com.example.fragmentcommunication.fragmenttoactivity.BlankFragment;
 import com.example.fragmentcommunication.fragmenttoactivity.SecondActivity;
+import com.example.fragmentcommunication.ftaprojectclone.FourthActivity;
 
 /**
  * The classes MainActivity, FragmentA & FragmentB are associated with each other for the purpose of
@@ -82,6 +83,12 @@ public class MainActivity extends AppCompatActivity
 
     public void gotoThirdActivity(View view) {
         Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void gotoFourthActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, FourthActivity.class);
         startActivity(intent);
         finish();
     }

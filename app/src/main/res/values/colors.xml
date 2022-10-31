@@ -31,6 +31,8 @@
     <!-- Current opacity for following color = 75% i.e. in hex = BF -->
     <color name="white_translucent_splash_screen">#BFFFFFFF</color>
     <color name="button_background_color">@color/orange_button</color>
+    <!-- Current opacity for following color = 80% i.e. in hex = CC -->
+    <color name="black_translucent">#CC000000</color>
 
     <!-- Number Colors -->
     <color name="number_color_0002">#766D64</color>
